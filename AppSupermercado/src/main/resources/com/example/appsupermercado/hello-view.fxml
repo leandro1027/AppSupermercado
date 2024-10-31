@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" prefHeight="300.0" prefWidth="300.0" fx:controller="com.example.appsupermercado.HelloController">
+    <MenuBar>
+        <Menu text="Arquivo">
+            <MenuItem text="Novo"/>
+            <MenuItem text="Abrir"/>
+            <SeparatorMenuItem/>
+            <MenuItem text="Sair"/>
+        </Menu>
+        <Menu text="Editar">
+            <MenuItem text="Copiar"/>
+            <MenuItem text="Colar" />
+        </Menu>
+    </MenuBar>
+
+    <Label text="Bem-vindo ao Menu Exemplo!" layoutX="50.0" layoutY="100.0"/>
+</AnchorPane>
