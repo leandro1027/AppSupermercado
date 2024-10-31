@@ -3,16 +3,17 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
 
+
 <AnchorPane xmlns:fx="http://javafx.com/fxml" prefHeight="300.0" prefWidth="300.0" fx:controller="com.example.appsupermercado.HelloController">
+
     <MenuBar>
         <Menu text="Funcionalidades">
             <MenuItem text="Caixa"/>
             <MenuItem text="Verificador de Preço"/>
-            <SeparatorMenuItem/>
         </Menu>
         <Menu text="Sobre">
         </Menu>
-        <Menu text="Sair">
+        <Menu text="Sair" onAction="#onSairButtonClick">
         </Menu>
     </MenuBar>
 
