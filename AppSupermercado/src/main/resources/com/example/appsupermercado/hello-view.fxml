@@ -3,15 +3,15 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
 
-
 <AnchorPane xmlns:fx="http://javafx.com/fxml" prefHeight="300.0" prefWidth="300.0" fx:controller="com.example.appsupermercado.HelloController">
 
     <MenuBar>
         <Menu text="Funcionalidades">
-            <MenuItem text="Caixa"/>
-            <MenuItem text="Verificador de Preço"/>
+            <MenuItem text="Caixa" onAction="#abrirCaixa" />
+            <MenuItem text="Verificador de Preço" onAction="#abrirVerificadorDePreco" />
         </Menu>
         <Menu text="Sobre">
+            <!-- Adicione informações sobre o aplicativo, se desejar -->
         </Menu>
         <Menu text="Sair" onAction="#onSairButtonClick">
         </Menu>
