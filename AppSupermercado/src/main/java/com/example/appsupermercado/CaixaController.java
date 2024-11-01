@@ -25,4 +25,6 @@ public class CaixaController {
             totalLabel.setText("Erro de entrada");
         }
     }
+
+
 }
