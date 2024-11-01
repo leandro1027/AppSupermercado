@@ -29,7 +29,7 @@ public class HelloController {
     }
 
     @FXML
-    public void onSairButtonClick() {
+    protected  void onSairButtonClick(){
         System.exit(0);
     }
 }
