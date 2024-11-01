@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml" prefHeight="300.0" prefWidth="300.0" fx:controller="com.example.appsupermercado.HelloController">
+<AnchorPane prefHeight="300.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.appsupermercado.HelloController">
 
-    <MenuBar>
+    <MenuBar prefHeight="25.0" prefWidth="300.0">
         <Menu text="Funcionalidades">
-            <MenuItem text="Caixa" onAction="#abrirCaixa" />
-            <MenuItem text="Verificador de Preço" onAction="#abrirVerificadorDePreco" />
+            <MenuItem onAction="#abrirCaixa" text="Caixa" />
+            <MenuItem onAction="#abrirVerificadorDePreco" text="Verificador de Preço" />
         </Menu>
         <Menu text="Sobre">
-            <!-- Adicione informações sobre o aplicativo, se desejar -->
         </Menu>
-        <Menu text="Sair" onAction="#onSairButtonClick">
+        <Menu onAction="#onSairButtonClick" text="Sair">
         </Menu>
     </MenuBar>
+   <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="75.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@images/logoCompreBemJavaFX.jpg" />
+      </image>
+   </ImageView>
+
+
+
 
 </AnchorPane>
