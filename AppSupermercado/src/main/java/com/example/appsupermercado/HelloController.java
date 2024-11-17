@@ -29,6 +29,16 @@ public class HelloController {
     }
 
     @FXML
+    protected void abrirSobre() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("sobre-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = new Stage();
+        stage.setTitle("Sobre o Aplicativo");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
     protected  void onSairButtonClick(){
         System.exit(0);
     }

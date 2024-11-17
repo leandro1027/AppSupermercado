@@ -12,9 +12,12 @@
             <MenuItem onAction="#abrirVerificadorDePreco" text="Verificador de Preço" />
         </Menu>
         <Menu text="Sobre">
+            <MenuItem onAction="#abrirSobre" text="Nos conheça" />
         </Menu>
-        <Menu onAction="#onSairButtonClick" text="Sair">
-        </Menu>
+        <Menu text="Sair"
+             <MenuItem onAction="#" text="Nos conheça" />
+
+    </Menu>
     </MenuBar>
    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="84.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
       <image>
