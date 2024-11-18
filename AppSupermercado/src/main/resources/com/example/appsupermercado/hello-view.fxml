@@ -1,20 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 
-
-<AnchorPane xmlns:fx="http://javafx.com/fxml" prefHeight="300.0" prefWidth="300.0" fx:controller="com.example.appsupermercado.HelloController">
-
-    <MenuBar>
+<AnchorPane prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.appsupermercado.HelloController">
+    <!-- MenuBar -->
+    <MenuBar layoutY="0.0" prefHeight="25.0" prefWidth="300.0">
         <Menu text="Funcionalidades">
-            <MenuItem text="Caixa"/>
-            <MenuItem text="Verificador de Preço"/>
+            <MenuItem accelerator="F1" onAction="#abrirCaixa" text="Caixa" />
+            <MenuItem accelerator="F2" onAction="#abrirVerificadorDePreco" text="Verificador de Preço" />
         </Menu>
         <Menu text="Sobre">
+            <MenuItem onAction="#abrirSobre" text="Nos conheça" />
         </Menu>
-        <Menu text="Sair" onAction="#onSairButtonClick">
+        <Menu text="Sair">
+            <MenuItem onAction="#onSairButtonClick" text="Fechar sistema" />
         </Menu>
     </MenuBar>
 
+    <!-- Layout Principal -->
+    <VBox alignment="CENTER" layoutX="0.0" layoutY="25.0" prefWidth="300.0" spacing="20">
+
+        <!-- Botões -->
+        <VBox alignment="CENTER" spacing="10" />
+    </VBox>
+      <Button layoutX="75.0" layoutY="352.0" onAction="#onSairButtonClick" prefWidth="150" text="Sair" />
+      <Button layoutX="75.0" layoutY="311.0" onAction="#abrirSobre" prefWidth="150" text="Nos conheça" />
+      <Button layoutX="75.0" layoutY="267.0" onAction="#abrirVerificadorDePreco" prefWidth="150" text="Verificador de Preço" />
+      <Button layoutX="75.0" layoutY="229.0" onAction="#abrirCaixa" prefWidth="150" text="Caixa" />
+
+        <Label layoutX="121.0" layoutY="203.0" text="Versão 1.0.0" />
+     <!-- Logo -->
+     <ImageView fitHeight="150.0" fitWidth="166.0" layoutX="75.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+             <Image url="@images/logoCompreBemJavaFX.jpg" />
+         </image>
+     </ImageView>
 </AnchorPane>
