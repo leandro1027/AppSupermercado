@@ -20,10 +20,9 @@ public class VerificadorDePrecoController {
     @FXML
     private TextField codigoProdutoTextField;
 
-    // Simulação de um "banco de dados" de produtos
+    //Simula um BD
     private Map<String, Produto> produtos;
 
-    // Construtor ou método de inicialização
     public VerificadorDePrecoController() {
         inicializarProdutos();
     }

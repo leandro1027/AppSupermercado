@@ -36,7 +36,7 @@ public class CaixaController {
     @FXML
     private Label lblChangeValue;
 
-    // Lista de produtos disponíveis (simulação de "banco de dados")
+    // Lista de produtos disponíveis
     private List<Produto> produtosDisponiveis = new ArrayList<>();
 
     // Total geral das compras
@@ -54,7 +54,6 @@ public class CaixaController {
         produtosDisponiveis.add(new Produto("Pasta de dente", 7.30));
     }
 
-    // Método para adicionar itens à lista
     @FXML
     public void adicionarNaLista() {
         String codigo = txtCode.getText();
@@ -72,7 +71,7 @@ public class CaixaController {
                 int qtd = Integer.parseInt(quantidade);
                 double totalItem = produto.getPreco() * qtd;
 
-                // Adiciona o item na lista
+                // Add o item
                 productList.getItems().add(
                         "Produto: " + produto.getDescricao() +
                                 " - Qtd: " + qtd +
@@ -84,7 +83,6 @@ public class CaixaController {
                 totalGeral += totalItem;
                 lblTotalValue.setText(String.format("%.2f", totalGeral));
 
-                // Exibe mensagem com informações do produto
                 lblProductInfo.setText("Adicionado: " + produto.getDescricao() + " - R$ " + produto.getPreco());
             } catch (NumberFormatException e) {
                 lblProductInfo.setText("Código ou quantidade inválidos.");
@@ -94,7 +92,6 @@ public class CaixaController {
         }
     }
 
-    // Método para remover itens da lista
     @FXML
     public void removerItem() {
         String itemSelecionado = productList.getSelectionModel().getSelectedItem();
@@ -102,7 +99,6 @@ public class CaixaController {
         if (itemSelecionado != null) {
             productList.getItems().remove(itemSelecionado);
 
-            // Atualiza o total geral
             String[] partes = itemSelecionado.split("Total: R\\$ ");
             double totalDoItem = Double.parseDouble(partes[1]);
             totalGeral -= totalDoItem;
@@ -114,7 +110,6 @@ public class CaixaController {
         }
     }
 
-    // Método para calcular o troco
     @FXML
     public void calcularTroco() {
         try {
