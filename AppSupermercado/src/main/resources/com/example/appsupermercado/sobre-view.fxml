@@ -6,40 +6,27 @@
 <?import javafx.scene.layout.*?>
 
 <VBox alignment="CENTER" prefHeight="400.0" prefWidth="300.0" spacing="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="com.example.appsupermercado.SobreController">
-    <!-- Padding geral -->
+
     <padding>
         <Insets bottom="15" left="15" right="15" top="15" />
     </padding>
 
-    <!-- Logo -->
     <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
         <image>
             <Image url="@images/logoCompreBemJavaFX.jpg" />
         </image>
     </ImageView>
 
-    <!-- Informações gerais -->
-    <Label text="Supermercado Compre Bem" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
-    <Label text="Versão: 1.0.0" style="-fx-text-fill: gray;" />
+    <Label text="Supermercado Compre Bem" />
+    <Label text="Versão: 1.0.0"/>
 
-    <!-- Desenvolvedor -->
     <VBox spacing="5" alignment="CENTER">
-        <Label text="Desenvolvedor:" style="-fx-font-weight: bold;" />
+        <Label text="Desenvolvedor:"/>
         <Label text="Leandro Balaban" />
-        <Label text="E-mail:" style="-fx-font-weight: bold;" />
+        <Label text="E-mail:"/>
         <Label text="leandrobalaban78@gmail.com" />
-        <Label text="Telefone:" style="-fx-font-weight: bold;" />
-        <Label text="(XX) XXXXX-XXXX" />
+        <Label text="Telefone:"/>
+        <Label text="(42) 99999-9999" />
     </VBox>
 
-    <!-- Redes sociais -->
-    <VBox spacing="5" alignment="CENTER">
-        <Label text="Redes Sociais:" />
-        <Label text="Instagram: @comprebem" />
-        <Label text="Facebook: Supermercado Compre Bem" />
-        <Label text="LinkedIn: Leandro Balaban" />
-    </VBox>
-
-    <!-- Botão Voltar -->
-    <Button text="Voltar" onAction="#voltarParaMenuPrincipal" prefWidth="100" />
 </VBox>

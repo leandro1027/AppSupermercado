@@ -37,7 +37,7 @@ public class VerificadorDePrecoController {
         produtos.put("4", new Produto("Pasta de Dente", 5.75));
     }
 
-    // Evento acionado ao digitar algo no campo de texto
+    // Evento acionado quando digita algo no campo de texto
     @FXML
     public void onCodigoTyped() {
         String codigo = codigoProdutoTextField.getText().trim();
@@ -48,10 +48,8 @@ public class VerificadorDePrecoController {
             return;
         }
 
-        // Busca o produto pelo código
         Produto produto = produtos.get(codigo);
 
-        // Atualiza a interface com as informações do produto
         if (produto != null) {
             atualizarInterface(produto.getDescricao(), produto.getPreco(), true);
         } else {
@@ -59,7 +57,6 @@ public class VerificadorDePrecoController {
         }
     }
 
-    // Método para atualizar os labels na interface
     private void atualizarInterface(String descricao, double valor, boolean encontrado) {
         if (encontrado) {
             produtoLabel.setText(descricao);
