@@ -5,24 +5,41 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" prefHeight="392.0" prefWidth="301.0" spacing="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="com.example.appsupermercado.SobreController">
+<VBox alignment="CENTER" prefHeight="400.0" prefWidth="300.0" spacing="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="com.example.appsupermercado.SobreController">
+    <!-- Padding geral -->
     <padding>
         <Insets bottom="15" left="15" right="15" top="15" />
     </padding>
 
-    <VBox alignment="CENTER" layoutX="75.0" layoutY="50.0" spacing="10">
-        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-                <Image url="@images/logoCompreBemJavaFX.jpg" />
-            </image>
-        </ImageView>
+    <!-- Logo -->
+    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+        <image>
+            <Image url="@images/logoCompreBemJavaFX.jpg" />
+        </image>
+    </ImageView>
 
-        <Label text="Desenvolvedor:" />
+    <!-- Informações gerais -->
+    <Label text="Supermercado Compre Bem" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+    <Label text="Versão: 1.0.0" style="-fx-text-fill: gray;" />
+
+    <!-- Desenvolvedor -->
+    <VBox spacing="5" alignment="CENTER">
+        <Label text="Desenvolvedor:" style="-fx-font-weight: bold;" />
         <Label text="Leandro Balaban" />
-        <Label text="E-mail:" />
+        <Label text="E-mail:" style="-fx-font-weight: bold;" />
         <Label text="leandrobalaban78@gmail.com" />
+        <Label text="Telefone:" style="-fx-font-weight: bold;" />
+        <Label text="(XX) XXXXX-XXXX" />
+    </VBox>
 
+    <!-- Redes sociais -->
+    <VBox spacing="5" alignment="CENTER">
+        <Label text="Redes Sociais:" />
+        <Label text="Instagram: @comprebem" />
+        <Label text="Facebook: Supermercado Compre Bem" />
+        <Label text="LinkedIn: Leandro Balaban" />
+    </VBox>
 
-</VBox>
-
+    <!-- Botão Voltar -->
+    <Button text="Voltar" onAction="#voltarParaMenuPrincipal" prefWidth="100" />
 </VBox>

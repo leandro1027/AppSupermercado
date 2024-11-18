@@ -1,12 +1,17 @@
 package com.example.appsupermercado;
 
+import com.example.appsupermercado.Model.Produto;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CaixaController {
+
     @FXML
     private TextField txtCode;
 
@@ -31,6 +36,24 @@ public class CaixaController {
     @FXML
     private Label lblChangeValue;
 
+    // Lista de produtos disponíveis (simulação de "banco de dados")
+    private List<Produto> produtosDisponiveis = new ArrayList<>();
+
+    // Total geral das compras
+    private double totalGeral = 0.0;
+
+    @FXML
+    public void initialize() {
+        // Inicialize o total com 0.00
+        lblTotalValue.setText("0.00");
+
+        // Adicione alguns produtos à lista (simulação)
+        produtosDisponiveis.add(new Produto("Desodorante", 11.90));
+        produtosDisponiveis.add(new Produto("Sabonete", 3.50));
+        produtosDisponiveis.add(new Produto("Shampoo", 15.75));
+        produtosDisponiveis.add(new Produto("Pasta de dente", 7.30));
+    }
+
     // Método para adicionar itens à lista
     @FXML
     public void adicionarNaLista() {
@@ -38,19 +61,34 @@ public class CaixaController {
         String quantidade = txtQuantity.getText();
 
         if (!codigo.isEmpty() && !quantidade.isEmpty()) {
-            double preco = 11.90; // Exemplo de preço fixo
-            int qtd = Integer.parseInt(quantidade);
-            double total = preco * qtd;
+            try {
+                int index = Integer.parseInt(codigo) - 1; // Código começa em 1
+                if (index < 0 || index >= produtosDisponiveis.size()) {
+                    lblProductInfo.setText("Produto não encontrado.");
+                    return;
+                }
 
-            // Adiciona o item na lista
-            productList.getItems().add("Produto: Desodorante - Qtd: " + qtd + " - Unit: R$ " + preco + " - Total: R$ " + total);
+                Produto produto = produtosDisponiveis.get(index);
+                int qtd = Integer.parseInt(quantidade);
+                double totalItem = produto.getPreco() * qtd;
 
-            // Atualiza o total geral
-            double totalAtual = Double.parseDouble(lblTotalValue.getText());
-            lblTotalValue.setText(String.format("%.2f", totalAtual + total));
+                // Adiciona o item na lista
+                productList.getItems().add(
+                        "Produto: " + produto.getDescricao() +
+                                " - Qtd: " + qtd +
+                                " - Unit: R$ " + produto.getPreco() +
+                                " - Total: R$ " + String.format("%.2f", totalItem)
+                );
 
-            // Exibe mensagem com informações do produto
-            lblProductInfo.setText("Adicionado: Desodorante - R$ " + preco);
+                // Atualiza o total geral
+                totalGeral += totalItem;
+                lblTotalValue.setText(String.format("%.2f", totalGeral));
+
+                // Exibe mensagem com informações do produto
+                lblProductInfo.setText("Adicionado: " + produto.getDescricao() + " - R$ " + produto.getPreco());
+            } catch (NumberFormatException e) {
+                lblProductInfo.setText("Código ou quantidade inválidos.");
+            }
         } else {
             lblProductInfo.setText("Por favor, preencha o código e a quantidade.");
         }
@@ -67,8 +105,8 @@ public class CaixaController {
             // Atualiza o total geral
             String[] partes = itemSelecionado.split("Total: R\\$ ");
             double totalDoItem = Double.parseDouble(partes[1]);
-            double totalAtual = Double.parseDouble(lblTotalValue.getText());
-            lblTotalValue.setText(String.format("%.2f", totalAtual - totalDoItem));
+            totalGeral -= totalDoItem;
+            lblTotalValue.setText(String.format("%.2f", totalGeral));
 
             lblProductInfo.setText("Item removido.");
         } else {
@@ -80,9 +118,8 @@ public class CaixaController {
     @FXML
     public void calcularTroco() {
         try {
-            double total = Double.parseDouble(lblTotalValue.getText());
             double pago = Double.parseDouble(txtPaid.getText());
-            double troco = pago - total;
+            double troco = pago - totalGeral;
 
             if (troco < 0) {
                 lblChangeValue.setText("0.00");
