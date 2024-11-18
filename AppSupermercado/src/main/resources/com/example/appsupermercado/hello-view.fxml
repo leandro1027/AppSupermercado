@@ -4,8 +4,9 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="300.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.appsupermercado.HelloController">
+<AnchorPane prefHeight="500.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.appsupermercado.HelloController">
 
+    <!-- Barra de Menu -->
     <MenuBar prefHeight="25.0" prefWidth="300.0">
         <Menu text="Funcionalidades">
             <MenuItem onAction="#abrirCaixa" text="Caixa" />
@@ -14,18 +15,25 @@
         <Menu text="Sobre">
             <MenuItem onAction="#abrirSobre" text="Nos conheça" />
         </Menu>
-        <Menu text="Sair"
-             <MenuItem onAction="#" text="Nos conheça" />
+        <Menu onAction="#onSairButtonClick" text="Sair">
 
-    </Menu>
+        </Menu>
     </MenuBar>
-   <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="84.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
-      <image>
-         <Image url="@images/logoCompreBemJavaFX.jpg" />
-      </image>
-   </ImageView>
 
+    <!-- Imagem do Logotipo -->
+    <VBox spacing="10" layoutX="75.0" layoutY="50.0" alignment="CENTER">
+        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@images/logoCompreBemJavaFX.jpg" />
+            </image>
+        </ImageView>
 
+        <Label text="Versão 1.0" prefWidth="150" alignment="CENTER"/>
+        <Button text="Caixa" prefWidth="150" onAction="#abrirCaixa" />
+        <Button text="Verificador de Preço" prefWidth="150" onAction="#abrirVerificadorDePreco" />
+        <Button text="Nos conheça" prefWidth="150" onAction="#abrirSobre" />
+        <Button text="Sair" prefWidth="150" onAction="#onSairButtonClick" />
+    </VBox>
 
 
 </AnchorPane>

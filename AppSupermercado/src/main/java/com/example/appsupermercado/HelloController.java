@@ -18,6 +18,8 @@ public class HelloController {
         stage.show();
     }
 
+
+
     @FXML
     protected void abrirVerificadorDePreco() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("verificador-preco.fxml"));
