@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class HelloController {
+
     @FXML
     protected void abrirCaixa() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("caixa-view.fxml"));

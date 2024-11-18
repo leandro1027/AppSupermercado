@@ -1,29 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" spacing="15.0" xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.appsupermercado.VerificadorDePrecoController"
-      prefHeight="300.0" prefWidth="400.0">
-
-    <!-- Padding para ajustar a margem interna -->
+<VBox alignment="CENTER" prefHeight="392.0" prefWidth="301.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="com.example.appsupermercado.SobreController">
     <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+        <Insets bottom="20" left="20" right="20" top="20" />
     </padding>
 
-    <!-- Campo de texto para inserir o código do produto -->
-    <Label text="Código do produto:" style="-fx-font-weight: bold;" />
-    <TextField fx:id="codigoProdutoTextField" onKeyTyped="#onCodigoTyped" />
+    <!-- Área da Logo -->
+    <VBox alignment="CENTER" spacing="15">
+        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@images/logoCompreBemJavaFX.jpg" />
+            </image>
+        </ImageView>
+    </VBox>
 
-    <!-- Exibição da descrição do produto -->
-    <Label text="Descrição:" style="-fx-font-weight: bold;" />
-    <Label fx:id="produtoLabel" text="---" style="-fx-font-size: 14px;" />
+    <!-- Informações do Desenvolvedor -->
+    <VBox alignment="CENTER" spacing="10">
+        <Label text="Desenvolvedor:" />
+        <Label text="Leandro Balaban" />
+        <Label text="E-mail:" />
+        <Label text="leandrobalaban78@gmail.com" />
+    </VBox>
 
-    <!-- Exibição do valor do produto -->
-    <Label text="Valor:" style="-fx-font-weight: bold;" />
-    <Label fx:id="valorLabel" text="R$ 0,00" style="-fx-font-size: 14px;" />
+    <!-- Informações Adicionais -->
+    <VBox alignment="CENTER" spacing="10">
+        <Label text="Agradecemos pelo seu interesse!" />
+    </VBox>
 
 </VBox>
