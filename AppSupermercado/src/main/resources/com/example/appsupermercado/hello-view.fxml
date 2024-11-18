@@ -4,36 +4,39 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="500.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.appsupermercado.HelloController">
-
-    <!-- Barra de Menu -->
-    <MenuBar prefHeight="25.0" prefWidth="300.0">
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.appsupermercado.HelloController" prefHeight="400.0" prefWidth="300.0">
+    <!-- MenuBar -->
+    <MenuBar layoutY="0.0" prefHeight="25.0" prefWidth="300.0">
         <Menu text="Funcionalidades">
-            <MenuItem onAction="#abrirCaixa" text="Caixa" />
-            <MenuItem onAction="#abrirVerificadorDePreco" text="Verificador de Preço" />
+            <MenuItem onAction="#abrirCaixa" text="Caixa" accelerator="F1"/>
+            <MenuItem onAction="#abrirVerificadorDePreco" text="Verificador de Preço" accelerator="F2" />
         </Menu>
         <Menu text="Sobre">
             <MenuItem onAction="#abrirSobre" text="Nos conheça" />
         </Menu>
-        <Menu onAction="#onSairButtonClick" text="Sair">
-
+        <Menu text="Sair">
+            <MenuItem onAction="#onSairButtonClick" text="Fechar sistema" />
         </Menu>
     </MenuBar>
 
-    <!-- Imagem do Logotipo -->
-    <VBox spacing="10" layoutX="75.0" layoutY="50.0" alignment="CENTER">
+    <!-- Layout Principal -->
+    <VBox alignment="CENTER" layoutX="0.0" layoutY="25.0" prefWidth="300.0" prefHeight="375.0" spacing="20">
+        <!-- Logo -->
         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@images/logoCompreBemJavaFX.jpg" />
             </image>
         </ImageView>
 
-        <Label text="Versão 1.0" prefWidth="150" alignment="CENTER"/>
-        <Button text="Caixa" prefWidth="150" onAction="#abrirCaixa" />
-        <Button text="Verificador de Preço" prefWidth="150" onAction="#abrirVerificadorDePreco" />
-        <Button text="Nos conheça" prefWidth="150" onAction="#abrirSobre" />
-        <Button text="Sair" prefWidth="150" onAction="#onSairButtonClick" />
+        <!-- Versão -->
+        <Label text="Versão 1.0.0" style="-fx-font-size: 14px; -fx-text-fill: gray;" />
+
+        <!-- Botões -->
+        <VBox spacing="10" alignment="CENTER">
+            <Button text="Caixa" prefWidth="150" onAction="#abrirCaixa" />
+            <Button text="Verificador de Preço" prefWidth="150" onAction="#abrirVerificadorDePreco" />
+            <Button text="Nos conheça" prefWidth="150" onAction="#abrirSobre" />
+            <Button text="Sair" prefWidth="150" onAction="#onSairButtonClick" />
+        </VBox>
     </VBox>
-
-
 </AnchorPane>
