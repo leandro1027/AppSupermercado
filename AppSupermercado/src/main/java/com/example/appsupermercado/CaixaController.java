@@ -36,7 +36,6 @@ public class CaixaController {
     @FXML
     private Label lblChangeValue;
 
-    // Lista de produtos disponíveis
     private List<Produto> produtosDisponiveis = new ArrayList<>();
 
     // Total geral das compras
@@ -47,7 +46,7 @@ public class CaixaController {
         // Inicialize o total com 0.00
         lblTotalValue.setText("0.00");
 
-        // Adicione alguns produtos à lista (simulação)
+        // add produtos
         produtosDisponiveis.add(new Produto("Desodorante", 11.90));
         produtosDisponiveis.add(new Produto("Sabonete", 3.50));
         produtosDisponiveis.add(new Produto("Shampoo", 15.75));
